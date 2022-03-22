@@ -75,7 +75,7 @@ export default function Home() {
       const randomGameNFTContract = new Contract(RANDOM_GAME_NFT_CONTRACT_ADDRESS, abi, signer);
 
       setLoading(true);
-      const tx = await randomGameNFTContract.joinGame({valuer: entryFee,});
+      const tx = await randomGameNFTContract.joinGame({value: entryFee, });
       await tx.wait();
       setLoading(false);
 
